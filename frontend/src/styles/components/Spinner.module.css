@@ -1,0 +1,22 @@
+
+.loader {
+    border: 16px solid var(--background);
+    border-top: 16px solid var(--blue-twitter);
+    border-radius: 50%;
+    height: 7.5rem;
+    width: 7.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    stroke-linecap: square;
+    stroke-width: 20;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

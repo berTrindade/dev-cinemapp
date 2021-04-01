@@ -1,0 +1,19 @@
+
+.navBar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background);
+}
+
+.navBar .navBarContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.6rem 0;
+}
+
+.navBar .navBarContainer img {
+    height: 1.6rem;
+}
