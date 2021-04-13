@@ -28,24 +28,29 @@ const toastTypeVariation = {
 
 export const Container = styled(animated.div)<ContainerProps>`
   width: 360px;
-  position: relative;
+  position: fixed;
   padding: 16px 30px 16px 16px;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   display: flex;
+  
   & + div {
     margin-top: 8px;
   }
+
   ${props => toastTypeVariation[props.type || 'info']}
+
   > svg {
     margin: 2px 12px 0 0;
   }
+  
   div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: flex-start;
     flex: 1;
+
     p {
       margin-top: 4px;
       font-size: 14px;
@@ -53,6 +58,7 @@ export const Container = styled(animated.div)<ContainerProps>`
       line-height: 20px;
     }
   }
+
   button {
     position: absolute;
     right: 16px;
@@ -62,6 +68,7 @@ export const Container = styled(animated.div)<ContainerProps>`
     background: transparent;
     color: inherit;
   }
+
   ${props =>
     !props.hasDescription &&
     css`
