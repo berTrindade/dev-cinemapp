@@ -1,9 +1,9 @@
 import React from "react";
-import styles from '../../styles/components/MovieCard/MovieCard.module.css';
-import { MovieCardProps } from "../../types/movie.types";
+import styles from '~/styles/components/MovieCard/MovieCard.module.css';
+import { MovieCardProps } from "../../types/movie";
 import { MovieCardDetails } from './MovieCardDetails';
 
-export const MovieCard: React.FC<MovieCardProps> = ({ movie, onRemove, addFavoriteMovie }) => {
+export const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
 
     return (
         <div className={styles.card} key={movie.imdbID}>
@@ -12,11 +12,7 @@ export const MovieCard: React.FC<MovieCardProps> = ({ movie, onRemove, addFavori
                 src={movie.poster}
                 alt="movie"
             />
-            <MovieCardDetails
-                movie={movie}
-                onRemove={onRemove}
-                addFavoriteMovie={addFavoriteMovie}
-            />
+            <MovieCardDetails movie={movie} />
         </div>
     );
 }

@@ -1,15 +1,18 @@
 
-import styles from '../../styles/components/MovieCard/MovieCardDetails.module.css';
-import { MovieCardProps } from '../../types/movie.types';
+import styles from '~/styles/components/MovieCard/MovieCardDetails.module.css';
+import { MovieCardProps } from '~/types/movie';
 import AddFavorite from '../AddFavorites';
+import { useMovies } from '~/context/MoviesContext';
 
-export const MovieCardDetails: React.FC<MovieCardProps> = ({ movie, onRemove, addFavoriteMovie }) => {
+export const MovieCardDetails: React.FC<MovieCardProps> = ({ movie }) => {
+
+    const { removeFavoriteMovie, addFavoriteMovie } = useMovies();
 
     return (
         <button className={styles.favoriteButton} onClick={() => {
-            movie.isFavorite ?
-            onRemove(movie.id, movie.imdbID) :
-            addFavoriteMovie(movie.imdbID)
+            movie.isFavorite 
+            ? removeFavoriteMovie(movie.imdbID) 
+            : addFavoriteMovie(movie.imdbID)
         }}>
             <div className={styles.favoriteIcon}>
                 <AddFavorite color={(movie.isFavorite && !movie.id) ? "black" : "white"}/>

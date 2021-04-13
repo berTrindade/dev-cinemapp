@@ -1,5 +1,5 @@
 import api from './api'
-import { Movie } from '../types/movie.types'
+import { Movie } from '~/types/movie'
 
 export const getMovies = async (params: string): Promise<Movie[]> => {
     const { data } = await api.get<Movie[]>("/movies", {

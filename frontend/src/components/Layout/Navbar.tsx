@@ -1,7 +1,7 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import backIcon from '../../assets/icons/back.svg';
-import styles from '../../styles/components/Layout/Navbar.module.css';
+import backIcon from '~/assets/icons/back.svg';
+import styles from '~/styles/components/Layout/Navbar.module.css';
 
 interface HeaderProps {
     title: string

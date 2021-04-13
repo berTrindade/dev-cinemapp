@@ -1,13 +1,19 @@
 
-import './styles/global.css'
+import GlobalStyle from './styles/global';
 import Routes from './routes/routes'
 import { MoviesProvider } from './context/MoviesContext';
+import { ToastProvider } from './context/ToastContext';
 
-function App() {
+const App: React.FC = () => {
   return (
-      <MoviesProvider>
-        <Routes />
-      </MoviesProvider>
+    <>
+      <ToastProvider>
+        <MoviesProvider>
+          <Routes />
+        </MoviesProvider>
+      </ToastProvider>
+      <GlobalStyle />
+    </>
   );
 }
 

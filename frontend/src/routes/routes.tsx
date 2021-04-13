@@ -1,7 +1,7 @@
 
 import { BrowserRouter, Route } from 'react-router-dom'
-import Favorites from '../pages/Favorites'
-import Home from '../pages/Home'
+import Favorites from '~/pages/Favorites'
+import Home from '~/pages/Home'
 
 export default function Routes() {
     return (

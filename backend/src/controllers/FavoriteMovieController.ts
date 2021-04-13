@@ -51,14 +51,14 @@ class FavoriteMovieController {
     }   
 
     async destroy(request: Request, response: Response) {        
-        const { id } = request.params;
+        const { imdbID } = request.params;
 
         const favoriteMovieRepository = getCustomRepository(FavoriteMovieRepository);            
 
         try {
-            const movie = await favoriteMovieRepository.findOne(id);        
+            const movie = await favoriteMovieRepository.findOne(imdbID);        
 
-            await favoriteMovieRepository.delete(String(movie?.id));
+            await favoriteMovieRepository.delete({ imdbID: String(movie?.imdbID) });
 
         } catch (error) {
             

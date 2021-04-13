@@ -1,12 +1,22 @@
+import { 
+    FormEvent, 
+    RefObject,
+    SetStateAction, 
+    Dispatch 
+} from 'react';
+import styles from '~/styles/components/Layout/Search.module.css';
 
-import styles from '../../styles/components/Layout/Search.module.css';
+type SearchProps = {
+    searchValueRef: RefObject<HTMLInputElement>;
+    searchHandler: Dispatch<SetStateAction<string>>;
+    handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+}  
 
 export default function Search({ 
     searchValueRef, 
     searchHandler,  
     handleSubmit
-}: any) {       
-
+}: SearchProps) {       
     return (
         <div className={styles.search}>
             <form className={styles.searchForm} onSubmit={handleSubmit}>
@@ -24,9 +34,8 @@ export default function Search({
                 />
                 <button 
                     className={styles.search}
-                    type="submit"
-                    onClick={handleSubmit}
-                > Search
+                    type="submit">
+                    Search
                 </button>
             </form>
         </div>
